@@ -17,31 +17,36 @@ fetch("http://localhost:8088/food")
             fetch(`https://world.openfoodfacts.org/api/v0/product/${food.barcode}.json`)
                 .then(response => response.json())
                 .then(productInfo => {
-                    console.log(productInfo)
-                    if (productInfo.product.ingredients_text) {
-                        food.ingredients = productInfo.product.ingredients_text
+                    const productIngredients = productInfo.product.ingredients_text;
+                    const productCountries = productInfo.product.countries;
+                    const productCalories = productInfo.product.nutriments["energy-kcal"];
+                    const productFats = productInfo.product.nutriments["fat"];
+                    const productSugars = productInfo.product.nutriments["sugars"];
+
+                    if (productIngredients) {
+                        food.ingredients = productIngredients;
                     } else {
-                        food.ingredients = "no ingredients listed"
+                        food.ingredients = "no ingredients listed";
                     }
-                    if (productInfo.product.countries) {
-                        food.origin = productInfo.product.countries
+                    if (productCountries) {
+                        food.origin = productCountries;
                     } else {
-                        food.origin = "no origin listed"
+                        food.origin = "no origin listed";
                     }
-                    if (productInfo.product.nutriments["energy-kcal"]) {
-                        food.calories = productInfo.product.nutriments["energy-kcal"]
+                    if (productCalories) {
+                        food.calories = productCalories;
                     } else {
-                        food.calories = "no calories per serving listed"
+                        food.calories = "no calories per serving listed";
                     }
-                    if (productInfo.product.nutriments["fat"]) {
-                        food.fats = productInfo.product.nutriments["fat"]
+                    if (productFats) {
+                        food.fats = productFats;
                     } else {
-                        food.fats = "no fat per serving listed"
+                        food.fats = "no fat per serving listed";
                     }
-                    if (productInfo.product.nutriments["sugars"]) {
-                        food.sugars = productInfo.product.nutriments["sugars"]
+                    if (productSugars) {
+                        food.sugars = productSugars;
                     } else {
-                        food.sugars = "no sugar per serving listed"
+                        food.sugars = "no sugar per serving listed";
                     }
 
                     // Produce HTML representation
@@ -53,11 +58,7 @@ fetch("http://localhost:8088/food")
     })
 
 
-
-
-
 const createFood = (food) => {
-    // console.log(food.name);
     return `<ul><li><b>${food.name}</b></li><li>${food.category}</li><li>${food.ethnicity}</li>
     <li>${food.ingredients}</li><li>${food.origin}</li><li>${food.calories}</li><li>${food.fats}</li><li>${food.sugars}</li></ul> `
 
