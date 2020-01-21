@@ -1,0 +1,7 @@
+.foodList {
+    display: flex;
+}
+
+li {
+    list-style: none;
+}
