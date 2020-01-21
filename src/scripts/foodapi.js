@@ -58,11 +58,7 @@ fetch("http://localhost:8088/food")
     })
 
 
-
-
-
 const createFood = (food) => {
-    // console.log(food.name);
     return `<ul><li><b>${food.name}</b></li><li>${food.category}</li><li>${food.ethnicity}</li>
     <li>${food.ingredients}</li><li>${food.origin}</li><li>${food.calories}</li><li>${food.fats}</li><li>${food.sugars}</li></ul> `
 
