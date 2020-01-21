@@ -5,14 +5,14 @@
       "name": "Linguine",
       "category": "pasta",
       "ethnicity": "italian",
-      "barcode": 8076809523509
+      "barcode": "8076809523509"
     },
     {
       "id": 2,
       "name": "Massaman curry",
       "category": "curry",
       "ethnicity": "thai",
-      "barcode": 5021047106031
+      "barcode": "5021047106031"
 
     },
     {
@@ -20,7 +20,7 @@
       "name": "Green curry",
       "category": "curry",
       "ethnicity": "thai",
-      "barcode": 5021047104419
+      "barcode": "5021047104419"
 
     },
     {
@@ -28,7 +28,7 @@
       "name": "Ravioli Funghi",
       "category": "pasta",
       "ethnicity": "italian",
-      "barcode": 8001665127585
+      "barcode": "8001665127585"
 
     },
     {
@@ -36,7 +36,7 @@
       "category": "delicious",
       "ethnicity": "cajun",
       "id": 6,
-      "barcode": 0071429095427
+      "barcode": "0071429095427"
 
     }
   ]
